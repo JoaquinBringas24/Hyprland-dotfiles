@@ -1,0 +1,176 @@
+/* 
+ * Prussian Blue & White Waybar (Clean Edition)
+ */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "SF Pro Display", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 49, 83, 0.85);
+    color: #ffffff;
+    margin: 8px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+}
+
+/* Logo */
+#custom-logo {
+    color: #00a8cc;
+    min-width: 32px;
+    margin: 5px;
+    padding: 0;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#custom-logo:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Workspaces Pill */
+#workspaces {
+    background: rgba(0, 20, 40, 0.4);
+    margin: 5px 4px;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    padding: 0px 12px;
+    color: #6a95b4;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    color: #ffffff;
+    background: #004d7a;
+    box-shadow: inset 0 0 8px rgba(0, 168, 204, 0.3);
+    /* White border-bottom removed here */
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Individual Pill Modules */
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#backlight,
+#custom-weather,
+#custom-updates,
+#custom-caffeine,
+#custom-language {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 0px 14px;
+    margin: 5px 3px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================================== */
+/*                VOLUME SLIDER & OVERLAP FIX                 */
+/* ========================================================== */
+
+/* Fixes overlapping text by reserving space for 3 digits (100%) */
+#pulseaudio {
+    color: #ffffff;
+    min-width: 40px;
+}
+
+/* Base slider layout spacing inside the capsule */
+#pulseaudio-slider {
+    min-width: 80px;
+    padding: 0px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+/* Unfilled background track line */
+#pulseaudio-slider trough {
+    min-height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active volume progress fill color */
+#pulseaudio-slider highlight {
+    background-color: #ffffff;
+}
+
+/* Draggable squared knob element (Forced Visible Square) */
+#pulseaudio-slider slider {
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0px;
+    /* Makes it perfectly squared */
+
+    /* Standard GTK bounds to prevent the element from disappearing */
+    min-height: 5px;
+    min-width: 5px;
+
+    /* Trick: Large transparent border crops the white background to a tiny square */
+    border: 3px solid transparent;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    /* Restricts the white color inside the border */
+}
+
+
+
+/* ========================================================== */
+
+/* System Tray */
+#tray {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px 3px;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+/* Window Title */
+#window {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 15px;
+}
+
+/* Color Accents */
+#clock {
+    color: #ffffff;
+}
+
+#network {
+    color: #00a8cc;
+}
+
+#battery {
+    color: #ffffff;
+}
+
+/* Tooltip Styling */
+tooltip {
+    background: rgba(0, 30, 50, 0.98);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+tooltip label {
+    color: #ffffff;
+    padding: 8px;
+}

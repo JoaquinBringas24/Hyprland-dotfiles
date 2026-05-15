@@ -1,0 +1,109 @@
+{
+    "layer": "top",
+    "position": "top",
+    //"mode": "dock",
+    "exclusive": true,
+    "passtrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        // "custom/language",
+        "group/volume",
+        "network",
+        "custom/weather",
+        "clock"
+    ],
+    "custom/logo": {
+        "format": "󰣇",
+        "on-click": "bash ~/.config/waybar/scripts/power-menu.sh"
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "0"
+        },
+        "sort-by-number": true
+    },
+    "network": {
+        "format": "{essid} ({signalStrength}%)  "
+    },
+    //"custom/updates": {
+    //    "exec": "(paru -Qua) | wc -l",
+    //    "interval": 7200,
+    //    "format": " {}"
+    //},
+    // "custom/language": {
+    //     "exec": "cat /tmp/kb_layout",
+    //     "interval": 3,
+    //     "format": " {}",
+    //     "tooltip": false
+    // },
+    "tray": {
+        "icon-size": 14,
+        "tooltip": false,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "<b>󰃭 {:%d/%m 󰥔 %I:%M}</b>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>\n<big>{:%Y %B}</big>"
+    },
+    "group/volume": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "volume-drawer",
+            "click-to-reveal": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "tooltip": false,
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
+        "scroll-step": 5
+    }
+}
