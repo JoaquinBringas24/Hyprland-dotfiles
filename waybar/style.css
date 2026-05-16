@@ -153,6 +153,7 @@ window#waybar {
 /* Color Accents */
 #clock {
     color: #ffffff;
+    padding-right: 4px;
 }
 
 #network {

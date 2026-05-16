@@ -19,11 +19,12 @@
         "group/volume",
         "network",
         "custom/weather",
+        "battery",
         "clock"
     ],
     "custom/logo": {
         "format": "󰣇",
-        "on-click": "bash ~/.config/waybar/scripts/power-menu.sh"
+        "on-click": "bash ~/.config/hypr/waybar/scripts/power-menu.sh"
     },
     "hyprland/window": {
         "format": "{}"
@@ -67,8 +68,30 @@
         "tooltip": false,
         "spacing": 10
     },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂃",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰁹"
+        ]
+    },
     "clock": {
-        "format": "<b>󰃭 {:%d/%m 󰥔 %I:%M}</b>",
+        "format": "<b>󰃭 {:%d/%m 󰥔 %H:%M}</b>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>\n<big>{:%Y %B}</big>"
     },
     "group/volume": {
