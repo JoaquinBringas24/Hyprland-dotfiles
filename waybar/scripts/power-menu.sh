@@ -15,5 +15,5 @@ case $selected in
   Suspend)
     systemctl suspend;;
   Logout)
-    hyprlock;;
+    pidof hyprlock || hyprlock;;
 esac

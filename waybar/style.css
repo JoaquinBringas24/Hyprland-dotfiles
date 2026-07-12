@@ -5,7 +5,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "SF Pro Display", sans-serif;
+    font-family: "CommitMono Nerd Font", "SF Pro Display", sans-serif;
     font-weight: 700;
     font-size: 13px;
     min-height: 0;
@@ -27,11 +27,10 @@ window#waybar {
 /* Logo */
 #custom-logo {
     color: #00a8cc;
-    min-width: 32px;
+    min-width: 8px;
     margin: 2px 5px;
     /* Reduced vertical margin from 5px to 2px */
-    padding: 0;
-    border-radius: 12px;
+    padding: 0px 6px;
     font-size: 16px;
     /* Slightly smaller icon to prevent stretching */
     transition: all 0.3s ease;
@@ -39,7 +38,6 @@ window#waybar {
 
 #custom-logo:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Workspaces Pill */
@@ -148,11 +146,11 @@ window#waybar {
 /* Color Accents */
 #clock {
     color: #ffffff;
-    padding-right: 4px;
+    padding-right: 8px;
 }
 
 #network {
-    color: #00a8cc;
+    color: #ffffff;
 }
 
 #battery {

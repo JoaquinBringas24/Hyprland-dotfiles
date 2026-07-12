@@ -23,8 +23,9 @@
         "clock"
     ],
     "custom/logo": {
-        "format": "󰣇",
-        "on-click": "bash ~/.config/hypr/waybar/scripts/power-menu.sh"
+        "format": "",
+        "on-click": "bash ~/.config/hypr/waybar/scripts/power-menu.sh",
+        "justify": "center"
     },
     "hyprland/window": {
         "format": "{}"
@@ -50,19 +51,9 @@
         "sort-by-number": true
     },
     "network": {
-        "format": "{essid} ({signalStrength}%)  "
+        "format": "{signalStrength}%  ",
+        "on-click": "kitty --class network-floating -e nmtui"
     },
-    //"custom/updates": {
-    //    "exec": "(paru -Qua) | wc -l",
-    //    "interval": 7200,
-    //    "format": " {}"
-    //},
-    // "custom/language": {
-    //     "exec": "cat /tmp/kb_layout",
-    //     "interval": 3,
-    //     "format": " {}",
-    //     "tooltip": false
-    // },
     "tray": {
         "icon-size": 14,
         "tooltip": false,
