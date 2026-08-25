@@ -1,5 +1,5 @@
 /* 
- * Prussian Blue & White Waybar (Clean & Compact Edition)
+ * Prussian Blue & White Waybar (Ultra-Compact Edition)
  */
 
 * {
@@ -7,46 +7,38 @@
     border-radius: 0;
     font-family: "CommitMono Nerd Font", "SF Pro Display", sans-serif;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 11px; /* 1. Reduced font size from 13px to 11px */
     min-height: 0;
-    /* Keeps global min-height completely flat */
 }
 
 window#waybar {
     background: rgba(0, 49, 83, 0.85);
     color: #ffffff;
-    margin: 4px 12px;
-    /* Reduced vertical margin from 8px to 4px */
+    margin: 0px 12px; /* 2. Removed vertical margin completely */
     border-radius: 0px;
-    /* Slightly reduced radius to fit the slimmer bar */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0px 8px;
-    /* Removed vertical padding */
+    padding: 0px; /* 3. Locked to 0px padding */
 }
 
 /* Logo */
 #custom-logo {
     color: #ffffff;
     min-width: 8px;
-    margin: 2px 5px;
-    /* Reduced vertical margin from 5px to 2px */
+    margin: 0px 5px; /* 4. Flattened vertical margin */
     padding: 0px 6px;
-    font-size: 16px;
-    /* Slightly smaller icon to prevent stretching */
+    font-size: 13px; /* 5. Shrunk icon from 16px to 13px */
     transition: all 0.3s ease;
 }
-
 
 /* Workspaces Pill */
 #workspaces {
     background: rgba(0, 20, 40, 0.4);
-    margin: 2px 4px;
-    /* Reduced vertical margin from 5px to 2px */
+    margin: 0px 0px; /* 6. Flattened vertical margin */
     border-radius: 10px;
 }
 
 #workspaces button {
-    padding: 0px 12px;
+    padding: 0px 6px;
     color: #6a95b4;
     border-radius: 10px;
     transition: all 0.2s ease;
@@ -56,12 +48,11 @@ window#waybar {
 #workspaces button.focused {
     color: #ffffff;
     background: #004d7a;
-    box-shadow: inset 0 0 8px rgba(0, 168, 204, 0.3);
 }
 
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 1);
+    color: black;
 }
 
 /* Individual Pill Modules */
@@ -79,8 +70,7 @@ window#waybar {
     background: rgba(255, 255, 255, 0.05);
     color: #ffffff;
     padding: 0px 14px;
-    margin: 2px 3px;
-    /* Reduced vertical margin from 5px to 2px */
+    margin: 0px 3px; /* 7. Flattened vertical margin */
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -114,9 +104,9 @@ window#waybar {
     background-image: none;
     box-shadow: none;
     border-radius: 0px;
-    min-height: 5px;
-    min-width: 5px;
-    border: 3px solid transparent;
+    min-height: 4px; /* 8. Slightly thinner slider indicator */
+    min-width: 4px;
+    border: 2px solid transparent;
     background-color: #ffffff;
     background-clip: padding-box;
 }
@@ -126,8 +116,7 @@ window#waybar {
 /* System Tray */
 #tray {
     background: rgba(0, 0, 0, 0.2);
-    margin: 2px 3px;
-    /* Reduced vertical margin from 5px to 2px */
+    margin: 0px 3px; /* 9. Flattened vertical margin */
     padding: 0 10px;
     border-radius: 8px;
 }
@@ -135,7 +124,7 @@ window#waybar {
 /* Window Title */
 #window {
     color: #ffffff;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
     margin: 0 15px;
 }
@@ -165,3 +154,4 @@ tooltip label {
     color: #ffffff;
     padding: 8px;
 }
+
