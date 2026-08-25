@@ -1,5 +1,5 @@
 /* 
- * Modernized Apple-Style Waybar (Fixed Logo Spillover)
+ * Modernized Apple-Style Waybar (Compact Height)
  */
 
 * {
@@ -7,47 +7,41 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", "SF Pro Display", sans-serif;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 13px; /* Reduced from 13px */
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(255, 209, 220, 0.9); 
+    background: rgba(255, 209, 220, 0.9);
     color: #4c4f69;
-    margin: 6px 10px;
-    border-radius: 16px;
-    /* Prevents modules from touching the very edge of the rounded bar */
-    padding: 0 5px; 
+    margin: 4px 10px;
+    border-radius: 0px;
+    padding: 0 6px;
 }
 
-/* Logo Fix: Ensure it stays inside the bar and looks like a button */
-/* Logo Fix: Perfectly centered and balanced */
+/* Logo Fix */
 #custom-logo {
-    color: white;
-    
-    /* Instead of flex, we use min-width + padding */
-    min-width: 32px; 
-    margin: 5px;
-    padding: 0; /* Keeping padding at 0 ensures the character is the center point */
-    
-    border-radius: 12px;
-    font-size: 16px;
-    
-    /* GTK-specific centering */
-    -gtk-icon-shadow: none;
+    color: #ffffff;
+    min-width: 32px;
+    margin: 2px 3px; /* Reduced vertical margins */
+    padding: 0;
+    border-radius: 8px;
+    font-size: 16px; /* Reduced from 16px */
     transition: all 0.3s ease;
-}/* Workspaces Pill */
+}
 
+/* Workspaces Pill */
 #workspaces {
-    background: rgba(30, 30, 46, 0.15);
-    margin: 5px 3px;
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 2px 2px;
+    border-radius: 8px;
 }
 
 #workspaces button {
-    padding: 0px 10px;
+    padding: 0px 8px; /* Reduced horizontal padding */
     color: #4c4f69;
-    border-radius: 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 #workspaces button.active,
@@ -67,20 +61,20 @@ window#waybar {
 #custom-weather,
 #custom-updates,
 #custom-caffeine,
-#custom-language {
+#language {
     background: rgba(255, 255, 255, 0.3);
     color: #313244;
-    padding: 0px 12px;
-    margin: 5px 3px;
-    border-radius: 10px;
+    padding: 0px 8px;
+    margin: 2px 2px; /* Reduced from 5px top/bottom to make pills shorter */
+    border-radius: 8px;
 }
 
-/* System Tray - Keeps icons from spilling */
+/* System Tray */
 #tray {
     background: rgba(255, 255, 255, 0.2);
-    margin: 5px 3px;
-    padding: 0 10px;
-    border-radius: 10px;
+    margin: 2px 2px; /* Reduced vertical margin */
+    padding: 0 8px;
+    border-radius: 8px;
 }
 
 #tray menu {
@@ -91,14 +85,52 @@ window#waybar {
 /* Window Title - Center/Minimal */
 #window {
     color: #5c5f77;
-    font-size: 11px;
-    margin: 0 15px;
+    font-size: 10px;
+    margin: 0 10px;
 }
 
 /* Colors */
-#clock { color: #4c4f69; }
-#pulseaudio { color: #4c4f69; }
-#network { color: #4c4f69; }
+#clock,
+#pulseaudio,
+#network,
+#language {
+    color: #4c4f69;
+}
+
+/* ========================================================== */
+/*                VOLUME SLIDER & OVERLAP FIX                 */
+/* ========================================================== */
+
+#pulseaudio {
+    min-width: 35px;
+}
+
+#pulseaudio-slider {
+    min-width: 70px;
+    padding: 0px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#pulseaudio-slider trough {
+    min-height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#pulseaudio-slider highlight {
+    background-color: #4c4f69;
+}
+
+#pulseaudio-slider slider {
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0px;
+    min-height: 4px;
+    min-width: 4px;
+    border: 2px solid transparent;
+    background-color: #ffffff;
+    background-clip: padding-box;
+}
 
 /* Tooltip Styling */
 tooltip {
@@ -106,4 +138,8 @@ tooltip {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-tooltip label { color: #cdd6f4; padding: 6px; }
+
+tooltip label {
+    color: #cdd6f4;
+    padding: 6px;
+}
