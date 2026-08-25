@@ -14,6 +14,7 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "hyprland/language",
         "tray",
         // "custom/language",
         "group/volume",
@@ -80,6 +81,17 @@
             "󰂁",
             "󰁹"
         ]
+    },
+
+    "hyprland/language": {
+
+        "format": "{}",
+        "format-en": "US",
+        "format-es-latam": "ES",
+        "format-es": "ES",
+        "format-spanish": "ES",
+        "on-click": "hyprctl switchxkblayout current next"
+
     },
     "clock": {
         "format": "<b>󰃭 {:%d/%m 󰥔 %H:%M}</b>",
